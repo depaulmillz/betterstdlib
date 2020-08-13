@@ -1,0 +1,10 @@
+add_executable(lthread_test lthread_test.cpp)
+target_link_libraries(lthread_test PRIVATE multithreading)
+target_link_libraries(lthread_test PRIVATE pthread)
+add_test(lthread_test lthread_test)
+
+add_executable(jthread_test jthread_test.cpp)
+target_link_libraries(jthread_test PRIVATE multithreading)
+target_link_libraries(jthread_test PRIVATE pthread)
+add_test(jthread_test jthread_test)
+
