@@ -54,7 +54,7 @@ namespace betterstd {
          */
         template<class Function, class... Args>
         explicit lthread(Function &&f, Args &&... args) : shouldFinish(std::make_unique<std::atomic<bool>>(false)) {
-            auto g = std::bind(f, args...);
+            auto g = std::bind(std::forward<Function>(f), std::forward<Args>(args)...);
 
             _thread = std::thread([g, this]() {
                 while (!this->shouldFinish->load())

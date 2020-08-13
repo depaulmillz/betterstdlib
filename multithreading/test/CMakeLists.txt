@@ -8,3 +8,8 @@ target_link_libraries(jthread_test PRIVATE multithreading)
 target_link_libraries(jthread_test PRIVATE pthread)
 add_test(jthread_test jthread_test)
 
+add_executable(threadpool_test threadpool_test.cpp)
+target_link_libraries(threadpool_test PRIVATE multithreading)
+target_link_libraries(threadpool_test PRIVATE pthread)
+add_test(threadpool_test threadpool_test)
+
