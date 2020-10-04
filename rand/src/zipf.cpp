@@ -6,7 +6,7 @@ namespace betterstd {
     double zeta(double theta, int n) {
         double sum = 0;
         for (int i = 1; i <= n; i++) {
-            sum += pow((1 / (double) i), theta);
+            sum += 1 / (pow(i, theta));
         }
         return sum;
     }
